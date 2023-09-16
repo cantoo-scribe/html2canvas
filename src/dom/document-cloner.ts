@@ -325,6 +325,11 @@ export class DocumentCloner {
             clone.style.transitionProperty = 'none';
 
             const style = window.getComputedStyle(node);
+
+            if (style.display === "none") {
+                return clone;
+            }
+
             const styleBefore = window.getComputedStyle(node, ':before');
             const styleAfter = window.getComputedStyle(node, ':after');
 
