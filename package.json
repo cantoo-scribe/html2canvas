@@ -93,7 +93,7 @@
         "build:reftest-result-list": "ts-node scripts/create-reftest-result-list.ts",
         "build:create-reftest-list": "ts-node scripts/create-reftest-list.ts tests/reftests/ignore.txt build/reftests.ts",
         "build:reftest-preview": "webpack --config www/webpack.config.js",
-        "release": "npm run build && release-it",
+        "release": "npm run lint && npm run unittest && npm run build && release-it",
         "format": "prettier --write \"{src,www/src,tests,scripts}/**/*.ts\"",
         "lint": "eslint src/**/*.ts --max-warnings 0",
         "test": "npm run lint && npm run unittest && npm run karma",
